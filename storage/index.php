@@ -13,7 +13,7 @@ if(isset($_GET['concurrent'])) {
 }
 $data = str_repeat("Some data to write to the file\n", 10000);
 
-for ($i = 0; $i < 1000; $i++) {
+for ($i = 0; $i < 100; $i++) {
     file_put_contents($file, $data, FILE_APPEND);
 }
 
