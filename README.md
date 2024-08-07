@@ -42,10 +42,7 @@ oc new-project php-performance-tests
      -e MYSQL_DATABASE=testdb
 ```
 #### 3. Implantar as Aplicações PHP
-```bash
-oc new-app php:7.4~https://github.com/LucianoRed/php-performance-tests.git --name=php-performance-app --strategy=source
-oc expose svc/php-performance-app
-```
+Use o deploy s2i com imagebuilder PHP para o repositorio https://github.com/LucianoRed/php-performance-tests.git
 
 
 
