@@ -5,6 +5,7 @@ if(!file_exists("/tmp/pv")) {
 if(isset($_GET['concurrent'])) {
   $file = '/tmp/pv/largefile.txt';
 } else {
+  $length = 20;
   $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   $characters = str_shuffle(str_repeat($characters, ceil($length / strlen($characters))));
   $file_name = substr($characters, 0, $length);
