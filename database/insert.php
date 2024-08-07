@@ -11,26 +11,47 @@ try {
     $pdo = new PDO($dsn, $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Criar a tabela se não existir
-    $pdo->exec("
-        CREATE TABLE IF NOT EXISTS test_table (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(255) NOT NULL,
-            value INT NOT NULL
-        );
+    // Verificar se a tabela já existe
+    $tableCheckQuery = $pdo->query("
+        SELECT COUNT(*)
+        FROM information_schema.tables 
+        WHERE table_schema = '$db' 
+        AND table_name = 'test_table'
     ");
+    
+    $tableExists = $tableCheckQuery->fetchColumn() > 0;
 
-    // Prepare the insert statement
-    $stmt = $pdo->prepare('INSERT INTO test_table (name, value) VALUES (:name, :value)');
-
-    for ($i = 0; $i < 10000; $i++) {
-        $name = 'Name ' . $i;
-        $value = rand(1, 1000);
-        $stmt->execute(['name' => $name, 'value' => $value]);
+    if (!$tableExists) {
+        // Criar a tabela se não existir
+        $pdo->exec("
+            CREATE TABLE test_table (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
+                value INT NOT NULL
+            );
+        ");
+        echo "Tabela 'test_table' criada com sucesso.\n";
+    } else {
+        echo "Tabela 'test_table' já existe.\n";
     }
 
-    echo "Inserted 10,000 records into test_table.\n";
+    // Verificar quantos registros existem na tabela
+    $countQuery = $pdo->query('SELECT COUNT(*) FROM test_table');
+    $rowCount = $countQuery->fetchColumn();
+
+    if ($rowCount < 10000) {
+        // Inserir registros faltantes
+        $stmt = $pdo->prepare('INSERT INTO test_table (name, value) VALUES (:name, :value)');
+        for ($i = $rowCount; $i < 10000; $i++) {
+            $name = 'Name ' . $i;
+            $value = rand(1, 1000);
+            $stmt->execute(['name' => $name, 'value' => $value]);
+        }
+        echo "Inseridos " . (10000 - $rowCount) . " registros na tabela 'test_table'.\n";
+    } else {
+        echo "A tabela 'test_table' já contém 10.000 registros ou mais.\n";
+    }
 
 } catch (PDOException $e) {
-    echo 'Connection failed: ' . $e->getMessage();
+    echo 'Falha na conexão: ' . $e->getMessage() . "\n";
 }
