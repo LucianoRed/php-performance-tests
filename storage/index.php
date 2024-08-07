@@ -9,7 +9,7 @@ if(isset($_GET['concurrent'])) {
   $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   $characters = str_shuffle(str_repeat($characters, ceil($length / strlen($characters))));
   $file_name = substr($characters, 0, $length);
-  $file = '/tmp/pv/$file_name';
+  $file = "/tmp/pv/$file_name";
 }
 $data = str_repeat("Some data to write to the file\n", 10000);
 
