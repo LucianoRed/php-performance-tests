@@ -42,9 +42,11 @@ oc new-project php-performance-tests
      -e MYSQL_DATABASE=testdb
 ```
 #### 3. Implantar as Aplicações PHP
-
+```bash
 oc new-app php:7.4~https://github.com/LucianoRed/php-performance-tests.git --name=php-performance-app
 oc expose svc/php-performance-app
+```
+
 
 
    
