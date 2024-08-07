@@ -38,7 +38,7 @@ oc new-project php-performance-tests
 
 ```bash
    oc new-app --name=mysql --docker-image=mysql:8.0 \
-     -e MYSQL_ROOT_PASSWORD=rootpassword \
+     -e MYSQL_ROOT_PASSWORD=password \
      -e MYSQL_DATABASE=testdb
 ```
 #### 3. Implantar as Aplicações PHP
