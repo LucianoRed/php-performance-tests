@@ -43,7 +43,7 @@ oc new-project php-performance-tests
 ```
 #### 3. Implantar as Aplicações PHP
 ```bash
-oc new-app php:7.4~https://github.com/LucianoRed/php-performance-tests.git --name=php-performance-app
+oc new-app php:7.4~https://github.com/LucianoRed/php-performance-tests.git --name=php-performance-app --strategy=source
 oc expose svc/php-performance-app
 ```
 
