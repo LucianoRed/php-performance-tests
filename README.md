@@ -59,6 +59,14 @@ Use o deploy s2i com imagebuilder PHP para o repositorio https://github.com/Luci
 
 ![image](https://github.com/user-attachments/assets/ec6264a7-db0f-4d9f-b750-b6e3f38ed615)
 
+#### 3. Clonar o repositorio na maquina de testes
 
+Pode ser na sua maquina local, desde que o k6 esteja instalado nela (https://k6.io/docs/get-started/installation/).
+```bash
+git clone https://github.com/LucianoRed/php-performance-tests/
+cd php-performance-tests
+```
+#### 4. Efetuar os testes
 
+O ideal é que sejam feitos 3 testes e calculada a média. Os scripts foram criados para testes simples.
    
