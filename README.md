@@ -44,6 +44,12 @@ oc new-project php-performance-tests
 #### 3. Implantar as Aplicações PHP
 Use o deploy s2i com imagebuilder PHP para o repositorio https://github.com/LucianoRed/php-performance-tests.git
 
+![image](https://github.com/user-attachments/assets/6c94ab4c-9de0-4302-8376-d8495f534097)
+
+![image](https://github.com/user-attachments/assets/bcd61ac7-7b24-437f-bcf2-13c43271f6ce)
+
+![image](https://github.com/user-attachments/assets/ec6264a7-db0f-4d9f-b750-b6e3f38ed615)
+
 
 
    
