@@ -43,13 +43,13 @@ oc new-project php-performance-tests
 ```
 #### 3. Implantar as Aplicações PHP
 
-- Deployment via linha de comando:
+- Deployment via linha de comando...
 ```bash
 oc new-app php~https://github.com/LucianoRed/php-performance-tests.git
 oc expose service/php-performance-tests
 ```
 
-- Deployment via Console:
+- ... ou deployment via Console:
 
 Use o deploy s2i com imagebuilder PHP para o repositorio https://github.com/LucianoRed/php-performance-tests.git
 
