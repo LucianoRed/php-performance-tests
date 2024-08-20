@@ -94,9 +94,9 @@ O ideal é que sejam feitos 3 testes e calculada a média. Os scripts foram cria
 
 ```bash
 export TESTHOST=http://`oc get route php-performance-tests -n php-performance-tests -o jsonpath='{.spec.host}'`
-k6 run cpu-test.js --out csv=benchmark/cpu/results1.csv
-k6 run cpu-test.js --out csv=benchmark/cpu/results2.csv
-k6 run cpu-test.js --out csv=benchmark/cpu/results3.csv
+k6 run cpu-test.js --out csv=benchmarks/cpu/results1.csv
+k6 run cpu-test.js --out csv=benchmarks/cpu/results2.csv
+k6 run cpu-test.js --out csv=benchmarks/cpu/results3.csv
 ```
    
 Mude o protocolo http:// para https:// se for testar usando https.
