@@ -109,7 +109,7 @@ Voce pode criar uma imagem de container que sugerimos ou usar qualquer outro web
 
 ```bash
 podman build -t benchmark-server . -f visualizador/Containerfile
-podman run --rm -it -p 8083:80 --name benchmark-container -v $(pwd)/benchmark:/usr/share/nginx/html benchmark-server
+podman run --rm -it -p 8083:80 --name benchmark-container -v $(pwd)/benchmarks:/usr/share/nginx/html benchmark-server
 ```
 E acesse em http://localhost:8083
 
