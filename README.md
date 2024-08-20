@@ -21,6 +21,17 @@ Para executar essas aplicações no OpenShift, siga as instruções abaixo.
 - Acesso ao console `oc`
 - k6 instalado localmente para execução dos testes
 
+Passos para instalacao de OC e K6 em um RHEL .
+
+Para o OC, basta seguir a documentacao em https://docs.openshift.com/container-platform/4.16/cli_reference/openshift_cli/getting-started-cli.html .
+
+Para o K6, a documentacao é esta https://k6.io/docs/get-started/installation/: 
+
+```bash
+sudo dnf install https://dl.k6.io/rpm/repo.rpm
+sudo dnf install k6
+```
+
 ### Passos para Implantação
 
 #### 1. Criar o Namespace
