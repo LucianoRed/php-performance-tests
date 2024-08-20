@@ -1,0 +1,8 @@
+# Use uma imagem base leve do Nginx
+FROM nginx:alpine
+
+# Exponha a porta 80
+EXPOSE 80
+
+# Comando para iniciar o Nginx
+CMD ["nginx", "-g", "daemon off;"]
