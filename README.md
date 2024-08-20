@@ -66,7 +66,17 @@ Pode ser na sua maquina local, desde que o k6 esteja instalado nela (https://k6.
 git clone https://github.com/LucianoRed/php-performance-tests/
 cd php-performance-tests
 ```
-#### 4. Efetuar os testes
+
+#### 4. Carregar base
+
+Acessar a URL de carga da base. Para obter a url:
+
+```bash
+oc get route php-performance-tests -n php-performance-tests -o jsonpath='{.spec.host}'
+```
+Acesse http://URL/database/insert.php. Leva alguns segundos para carregar. 
+
+#### 5. Efetuar os testes
 
 O ideal é que sejam feitos 3 testes e calculada a média. Os scripts foram criados para testes simples. 
 
@@ -81,7 +91,7 @@ Mude o protocolo http:// para https:// se for testar usando https.
 
 E para os testes de memoria e storage, nao esquecer de mudar o diretorio de saida.
 
-#### 5. Visualizar os testes
+#### 6. Visualizar os testes
 
 Voce pode criar uma imagem de container que sugerimos ou usar qualquer outro webserver
 
