@@ -20,6 +20,7 @@ Para executar essas aplicações no OpenShift, siga as instruções abaixo.
 - Um cluster OpenShift em execução
 - Acesso ao console `oc`
 - k6 instalado localmente para execução dos testes
+- git 
 
 Passos para instalacao de OC e K6 em um RHEL .
 
