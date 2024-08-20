@@ -5,7 +5,8 @@
 - Cluster OpenShift 4.15.10 na AWS em us-east-2
 - Maquina RHEL em VPC dedicada na AWS em us-east-2 do tipo t3.medium
 - A VPC do OpenShift e maquina de teste estavam na mesma regiao.
-
+- Cenário k6: 100 usuários simultaneos durante 30 segundos.
+  
 ## Resultados
 
 Estes resultados servem apenas como parametros iniciais de comparação.
