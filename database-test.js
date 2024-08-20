@@ -4,12 +4,11 @@ import { sleep } from 'k6';
 export const options = {
   vus: 100,
   duration: '30s',
-  tls: {
-    insecureSkipTLSVerify: true,
-  },
+  insecureSkipTLSVerify: true,
 };
 
 export default function () {
-  http.get('http://localhost:8000/database/');
+  const host = __ENV.TESTHOST || 'http://localhost:8000'; // Usa a variável de ambiente HOST ou um valor padrão
+  http.get(`${host}/database/`);
   sleep(1);
 }
