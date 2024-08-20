@@ -4,8 +4,12 @@
 ## Cenário testado
 - Cluster OpenShift 4.15.10 na AWS em us-east-2
 - Maquina RHEL em VPC dedicada na AWS em us-east-2 do tipo t3.medium
+- A VPC do OpenShift e maquina de teste estavam na mesma regiao.
 
 ## Resultados
+
+Estes resultados servem apenas como parametros iniciais de comparação.
+
 ### Cpu
 
 ![image](https://github.com/user-attachments/assets/e3e01831-12e5-4651-a17e-26f3eac95ac4)
@@ -26,6 +30,16 @@
 
 
 ### Storage
+
+* Graficos OpenShift de 19:04 a 19:08
+
+![image](https://github.com/user-attachments/assets/c2a624d8-8da6-431d-8138-c3e9d5624a3d)
+
+![image](https://github.com/user-attachments/assets/608f56d1-af36-45b8-94e2-90309edaf241)
+
+![image](https://github.com/user-attachments/assets/2a73b83b-42e5-4874-ab3d-ce4bf90507ba)
+
+![image](https://github.com/user-attachments/assets/88992d97-743f-4379-859a-6f41f23540e3)
 
 
 
