@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K6 Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .chart {
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart">
+            <canvas id="chart1"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="chart2"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="chart3"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Função para carregar e criar um gráfico a partir de um CSV
+        function loadChart(csvFile, chartId) {
+            fetch(csvFile)
+                .then(response => response.text())
+                .then(data => {
+                    const lines = data.trim().split('\n').slice(1); // Ignorar cabeçalho
+                    const parsedData = lines.map(line => {
+                        const [metricName, timestamp, metricValue] = line.split(',');
+                        return { metricName, metricValue: parseFloat(metricValue) };
+                    });
+
+                    const reqs = parsedData.filter(d => d.metricName === 'http_reqs');
+                    const failedReqs = parsedData.filter(d => d.metricName === 'http_req_failed');
+                    const durations = parsedData.filter(d => d.metricName === 'http_req_duration');
+
+                    const reqsPerSec = getSum(reqs);
+                    const failedReqsCount = getSum(failedReqs);
+                    const avgDuration = getAverage(durations);
+
+                    const ctx = document.getElementById(chartId).getContext('2d');
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Reqs/s', 'Failed Reqs', 'Avg Duration (ms)'],
+                            datasets: [
+                                {
+                                    label: 'Metrics',
+                                    data: [reqsPerSec, failedReqsCount, avgDuration],
+                                    backgroundColor: [
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }
+                            ]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            },
+                            plugins: {
+                                // Exibir o valor no topo de cada barra
+                                datalabels: {
+                                    anchor: 'end',
+                                    align: 'end',
+                                    formatter: function(value) {
+                                        return value.toFixed(2);
+                                    },
+                                    font: {
+                                        weight: 'bold'
+                                    }
+                                }
+                            }
+                        },
+                        plugins: [ChartDataLabels]
+                    });
+                });
+        }
+
+        // Função para calcular a soma de métricas
+        function getSum(data) {
+            return data.reduce((acc, d) => acc + d.metricValue, 0);
+        }
+
+        // Função para calcular a média
+        function getAverage(data) {
+            const sum = getSum(data);
+            return sum / data.length;
+        }
+
+        // Carregar os três gráficos
+        loadChart('results1.csv', 'chart1');
+        loadChart('results2.csv', 'chart2');
+        loadChart('results3.csv', 'chart3');
+    </script>
+    <!-- Incluindo a biblioteca ChartDataLabels -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+</body>
+</html>
