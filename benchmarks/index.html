@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmark Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298, #ff6a89);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .link {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            color: #fff;
+            transition: background 0.3s ease;
+        }
+
+        .link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">
+        <img src="https://via.placeholder.com/100?text=Logo" alt="Benchmark Logo">
+        Benchmark Dashboard
+    </div>
+
+    <div class="links-container">
+        <a href="memory/memory.html" class="link">Memory Benchmark</a>
+        <a href="cpu/cpu.html" class="link">CPU Benchmark</a>
+        <a href="database/database.html" class="link">Database Benchmark</a>
+        <a href="storage/storage.html" class="link">Storage Benchmark</a>
+    </div>
+
+</body>
+</html>
