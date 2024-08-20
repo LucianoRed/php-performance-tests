@@ -68,5 +68,26 @@ cd php-performance-tests
 ```
 #### 4. Efetuar os testes
 
-O ideal é que sejam feitos 3 testes e calculada a média. Os scripts foram criados para testes simples.
+O ideal é que sejam feitos 3 testes e calculada a média. Os scripts foram criados para testes simples. 
+
+```bash
+export TESTHOST=http://`oc get route php-performance-tests -n php-performance-tests -o jsonpath='{.spec.host}'`
+k6 run cpu-test.js --out csv=benchmark/cpu/results1.csv
+k6 run cpu-test.js --out csv=benchmark/cpu/results2.csv
+k6 run cpu-test.js --out csv=benchmark/cpu/results3.csv
+```
    
+Mude o protocolo http:// para https:// se for testar usando https.
+
+E para os testes de memoria e storage, nao esquecer de mudar o diretorio de saida.
+
+#### 5. Visualizar os testes
+
+Voce pode criar uma imagem de container que sugerimos ou usar qualquer outro webserver
+
+```bash
+podman build -t benchmark-server . -f visualizador/Containerfile
+podman run --rm -it -p 8083:80 --name benchmark-container -v $(pwd)/benchmark:/usr/share/nginx/html benchmark-server
+```
+E acesse em http://localhost:8083
+
