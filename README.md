@@ -9,7 +9,9 @@ Este repositório contém quatro aplicações PHP projetadas para realizar teste
 
 ## Objetivo
 
-O objetivo deste repositório é fornecer um conjunto de testes de carga para avaliar o desempenho de diferentes tipos de operações em um ambiente PHP. Isso é útil para entender como cada tipo de operação afeta o desempenho geral do sistema e para identificar possíveis gargalos.
+O objetivo deste repositório é fornecer um conjunto de testes de carga para avaliar o desempenho de diferentes tipos de operações em um ambiente PHP. Isso é útil para entender como cada tipo de operação afeta o desempenho geral do sistema e para identificar possíveis gargalos. Além disso, existem alguns benchmarks que podem ser bem úteis para comparação.
+
+Caso queira contribuir com o benchmark, existe uma pasta contribuicao com um README.md que voce pode utilizar para subir seus benchmarks.
 
 ## Configuração no OpenShift
 
