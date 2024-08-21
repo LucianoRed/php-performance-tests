@@ -43,5 +43,19 @@ Estes resultados servem apenas como parametros iniciais de comparação.
 ![image](https://github.com/user-attachments/assets/88992d97-743f-4379-859a-6f41f23540e3)
 
 
+### Database
 
+* Graficos OpenShift de 10:15 a 10:20
+
+![image](https://github.com/user-attachments/assets/bca0f22c-9a6e-44e6-b182-8f31b9ff5e98)
+
+![image](https://github.com/user-attachments/assets/02390051-3e61-4af6-be99-41ce03de42f1)
+
+![image](https://github.com/user-attachments/assets/392c314d-c029-4dc8-9f3f-ae55595d85ac)
+
+![image](https://github.com/user-attachments/assets/efac79dc-6aa4-4916-ad3c-f881fc648885)
+
+![image](https://github.com/user-attachments/assets/c2485cf4-fe83-4701-a852-272582643ff7)
+
+OBS: Neste ultimo grafico, de I/O, desconsiderar o IO, uma vez que foi ainda resultado do teste anterior de Storage.
 
