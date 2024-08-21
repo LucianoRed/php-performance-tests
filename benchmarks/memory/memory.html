@@ -44,7 +44,7 @@
                     const failedReqs = parsedData.filter(d => d.metricName === 'http_req_failed');
                     const durations = parsedData.filter(d => d.metricName === 'http_req_duration');
 
-                    const reqsPerSec = getSum(reqs);
+                    const reqsPerSec = getSum(reqs)/30;
                     const failedReqsCount = getSum(failedReqs);
                     const avgDuration = getAverage(durations);
 
