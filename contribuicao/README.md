@@ -15,7 +15,7 @@ Estes resultados servem apenas como parametros iniciais de comparação.
 
 ### Cpu
 
-![image](https://github.com/user-attachments/assets/e3e01831-12e5-4651-a17e-26f3eac95ac4)
+![image](https://github.com/user-attachments/assets/3ee4aaab-744e-469d-bd4e-dca5d355c0c8)
 
 ![image](https://github.com/user-attachments/assets/0d6e19e2-8920-44e0-8c85-414836469dfe)
 
