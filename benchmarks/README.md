@@ -21,7 +21,7 @@ Estes resultados servem apenas como parametros iniciais de comparação.
 
 ### Memoria
 
-![image](https://github.com/user-attachments/assets/c1fc3138-3193-45c6-80bc-783780aea93d)
+![image](https://github.com/user-attachments/assets/937b8a50-fa08-4628-b2ec-be1f98a20409)
 
 ![image](https://github.com/user-attachments/assets/7bc0593c-ae58-4c29-bff2-a3cc0ba2f499)
 
