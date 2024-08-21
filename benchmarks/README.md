@@ -3,9 +3,10 @@
 
 ## Cenário testado
 - Cluster OpenShift 4.15.10 na AWS em us-east-2
-- Maquina RHEL em VPC dedicada na AWS em us-east-2 do tipo t3.medium
+- Maquina RHEL em VPC dedicada na AWS em us-east-2 do tipo t3.medium para disparo dos testes
 - A VPC do OpenShift e maquina de teste estavam na mesma regiao.
 - Cenário k6: 100 usuários simultaneos durante 30 segundos.
+- 1 pod apenas. Note que, dependendo do cenário, vai obter melhoria ampliando o numero de pods. Em outros não tanto.
   
 ## Resultados
 
