@@ -34,7 +34,7 @@ Estes resultados servem apenas como parametros iniciais de comparação.
 
 * Graficos OpenShift de 19:04 a 19:08
 
-![image](https://github.com/user-attachments/assets/c2a624d8-8da6-431d-8138-c3e9d5624a3d)
+![image](https://github.com/user-attachments/assets/4af12e18-f312-491b-bff1-4d914d76e169)
 
 ![image](https://github.com/user-attachments/assets/608f56d1-af36-45b8-94e2-90309edaf241)
 
